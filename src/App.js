@@ -11,8 +11,15 @@ class App extends React.Component {
   render() {
     return (
       <div data-test="component-app">
-        <h1 data-test="counter-display">The counter is curretly</h1>
-        <button data-test="increment-button">Increment counter</button>
+        <h1 data-test="counter-display">
+          The counter is curretly {this.state.counter}
+        </h1>
+        <button
+          data-test="increment-button"
+          onClick={() => this.setState({ counter: this.state.counter + 1 })}
+        >
+          Increment counter
+        </button>
       </div>
     );
   }
