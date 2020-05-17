@@ -20,6 +20,12 @@ class App extends React.Component {
         >
           Increment counter
         </button>
+        <button
+          data-test="decrement-button"
+          onClick={() => this.setState({ counter: this.state.counter - 1 })}
+        >
+          Increment counter
+        </button>
       </div>
     );
   }
