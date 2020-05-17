@@ -28,19 +28,23 @@ const findByTestAttr = (wrapper, val) => {
 };
 
 test("renders without error", () => {
-  const wrapper = setup();
+  const wrapper = shallow(<App />);
   const appComponent = findByTestAttr(wrapper, "component-app");
   expect(appComponent.length).toBe(1);
 });
 test("renders increment button", () => {
-  const wrapper = setup();
+  const wrapper = shallow(<App />);
   const button = findByTestAttr(wrapper, "increment-button");
   expect(button.length).toBe(1);
 });
 test("renders counter disply", () => {
-  const wrapper = setup();
+  const wrapper = shallow(<App />);
   const counterDisplay = findByTestAttr(wrapper, "counter-display");
   expect(counterDisplay.length).toBe(1);
 });
-test("counter start at 0", () => {});
+test("counter start at 0", () => {
+  const wrapper = shallow(<App />);
+  const initialCounterState = wrapper.state("counter");
+  expect(initialCounterState).toBe(0);
+});
 test("clicking button increments counter display", () => {});
